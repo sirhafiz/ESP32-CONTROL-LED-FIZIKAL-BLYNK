@@ -28,11 +28,8 @@ void loop() {
 
 // Fungsi ni auto panggil bila kau tekan button/switch di Blynk (Virtual Pin V0)
 BLYNK_WRITE(V0) {
-
   int nilai = param.asInt();   // Dapat nilai dari Blynk: 0 = OFF, 1 = ON
-
   digitalWrite(LED_PIN, nilai ? HIGH : LOW);   // Kawal LED fizikal
-
   Serial.print("LED fizikal dikawal dari Blynk: ");
   Serial.println(nilai ? "NYALA" : "MATI");
 }
