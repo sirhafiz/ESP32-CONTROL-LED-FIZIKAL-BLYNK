@@ -1,14 +1,14 @@
-#define BLYNK_TEMPLATE_ID "TMPL69uxsFREi"           // Template ID kau
-#define BLYNK_TEMPLATE_NAME "esp32led"              // Template Name kau
-#define BLYNK_AUTH_TOKEN "KRjCe2I_zfEexrAiYnNyzV0kQlxZYRuU"  // Auth Token kau
+#define BLYNK_TEMPLATE_ID "Template ID "           // Template ID kau
+#define BLYNK_TEMPLATE_NAME "Template Name"              // Template Name kau
+#define BLYNK_AUTH_TOKEN "Token"                    // Auth Token kau
 
 #include <WiFi.h>
 #include <BlynkSimpleEsp32.h>
 
-#define LED_PIN 27          // Pin LED fizikal
+#define LED_PIN 27                 // Pin LED fizikal
 
-char ssid[] = "HafizTM 2.4GHz";     // Nama WiFi
-char pass[] = "h@f1z5335";          // Password WiFi
+char ssid[] = "WIFI";                 // Nama WiFi
+char pass[] = "Password";          // Password WiFi
 
 void setup() {
   Serial.begin(115200);
@@ -28,6 +28,7 @@ void loop() {
 
 // Fungsi ni auto panggil bila kau tekan button/switch di Blynk (Virtual Pin V0)
 BLYNK_WRITE(V0) {
+
   int nilai = param.asInt();   // Dapat nilai dari Blynk: 0 = OFF, 1 = ON
 
   digitalWrite(LED_PIN, nilai ? HIGH : LOW);   // Kawal LED fizikal
